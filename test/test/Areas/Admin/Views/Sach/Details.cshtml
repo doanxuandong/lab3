@@ -1,0 +1,99 @@
+﻿@model test.Models.SACH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+ 
+<h2 style="color: blue">THÔNG TIN CHI TIẾT</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sách:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSach)
+        </dd>
+        <br />
+        <dt>
+            Đơn vị tính:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonViTinh)
+        </dd>
+        <br />
+        <dt>
+            Đơn giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+        <br />
+        <dt>
+            Mô tả:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+        <br />
+        <dt>
+            Hình minh họa:
+        </dt>
+
+        <dd>
+            <img src="~/Content/img/Sach/@Model.HinhMinhHoa" width="100px" />
+        </dd>
+        <br />
+        <dt>
+            Ngày cập nhật:
+        </dt>
+
+        <dd>
+            @Html.FormatValue(@Model.NgayCapNhat, "{0:dd/MM/yyyy}")
+        </dd>
+        <br />
+        <dt>
+            Số lượng bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongBan)
+        </dd>
+        <br />
+        <dt>
+            Số lần xem:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanXem)
+        </dd>
+        <br />
+        <dt>
+            Tên chủ đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+        <br />
+        <dt>
+            Tên xuất bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHAXUATBAN.TenNXB)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button style="background-color: deepskyblue;border-radius:5px;width: 100px;height:40px">@Html.ActionLink("Edit", "Edit", new { id = Model.MaSach }) </button>
+    <button style="background-color: deepskyblue;border-radius:5px;width: 100px;height:40px"> @Html.ActionLink("Back to List", "Index")</button>
+</p>
+<br />

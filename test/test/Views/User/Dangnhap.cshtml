@@ -1,0 +1,29 @@
+﻿@model test.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "Dangnhap";
+}
+
+
+<h4 style="color:red; text-align:center;">@ViewBag.ThongBao</h4>
+<h4 class="text-center" style="color: blue">ĐĂNG NHẬP</h4>
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr>
+            <td height="40">Tên đăng nhập: </td>
+            <td>@Html.TextBox("TenDN")@ViewData["er1"]</td>
+        </tr>
+
+        <tr>
+            <td height="40">Mật khẩu: </td>
+            <td>@Html.Password("MatKhau")@ViewData["er1"]</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Đăng nhập" /></td>
+        </tr>
+    }
+</table>

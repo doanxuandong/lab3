@@ -1,0 +1,12 @@
+﻿@model IEnumerable<test.Models.CHUDE>
+
+
+
+@foreach (var item in Model)
+{
+
+    <a href="@Url.Action("Sachtheochude","Home",new {id = item.MaCD })" class="list-group-item">@item.TenChuDe</a>
+  
+}
+
+

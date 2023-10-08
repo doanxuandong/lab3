@@ -1,0 +1,34 @@
+﻿@model test.Models.CHUDE
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h2 style="color:blue; text-align: center">THÔNG TIN CHI TIẾT</h2>
+    <br />
+    <br />
+    <div>
+
+        <p><b>Mã chủ đề:</b> @Html.DisplayFor(model => model.MaCD)</p>
+        <p><b>Tên chủ đề:</b> @Html.DisplayFor(model => model.TenChuDe)</p>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <button style="background-color: deepskyblue; width: 100px; height: 40px; border-radius: 10px; color: white" onclick="location.href='@Url.Action("Edit", new { id = Model.MaCD })'">
+                EDIT
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button style="background-color: deepskyblue; width: 100px; height: 40px; border-radius: 10px; color: white" onclick="location.href='@Url.Action("Index", "ChuDe")'">
+                Back to list
+            </button>
+        </div>
+
+    </div>
+    </div>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Sách Online YangStone</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+
+        <nav class="navbar navbar-inverse ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="@Url.Action("Index","Home",null)">TRANG CHỦ</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="@Url.Action("About","Home",null)">GIỚI THIỆU</a></li>
+                        <li class="active"><a href="@Url.Action("Contact","Home",null)">LIÊN HỆ</a></li>
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.Action("LoginLogout", "Home")</li>
+                        <li>@Html.Action("Giohang_partial", "GioHang")</li>
+                    </ul>
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-inline" }))
+                    {
+                        <div class="form-group">
+                            <label for="searchString">Tìm sách:</label>
+                            <input type="text" id="searchString" class="form-control mx-sm-3" name="searchString" value="@ViewBag.Keyword" placeholder="Nhập tên sách cần tìm">
+                            <input type="submit" value="Tìm sách" class="btn btn-danger">
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer class="container text-center">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
